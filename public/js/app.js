@@ -12866,11 +12866,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
 /* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Button.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Nav.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Nav.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 
@@ -12947,58 +12946,51 @@ var SideNavbar = /*#__PURE__*/function (_React$Component) {
         className: classnames__WEBPACK_IMPORTED_MODULE_3___default()("sidebar", {
           "is-open": this.props.isOpen
         }),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
           className: "sidebar-header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default, {
-            variant: "link",
-            onClick: this.props.toggle,
-            style: {
-              color: "#fff"
-            },
-            className: "mt-4",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__.FontAwesomeIcon, {
-              icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faTimes,
-              pull: "right",
-              size: "xs"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h3", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h3", {
             children: "Sample Project"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default, {
           className: "flex-column pt-2",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default.Item, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Item, {
             className: "active",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default.Link, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Link, {
               href: "#/home",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__.FontAwesomeIcon, {
+                icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faHome,
                 className: "mr-2"
               }), "Home"]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default.Item, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default.Link, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Item, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Link, {
               href: "#/users",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__.FontAwesomeIcon, {
+                icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faUsers,
                 className: "mr-2"
               }), "Users"]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default.Item, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default.Link, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Item, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Link, {
               href: "#/items",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__.FontAwesomeIcon, {
+                icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faThList,
                 className: "mr-2"
               }), "Items"]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default.Item, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default.Link, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Item, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Link, {
               href: "#/weather",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__.FontAwesomeIcon, {
+                icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faWind,
                 className: "mr-2"
               }), "Weather"]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default.Item, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default.Link, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Item, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default.Link, {
               onClick: this.onLogoutHandler,
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__.FontAwesomeIcon, {
+                icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faSignOutAlt,
                 className: "mr-2"
               }), "Logout"]
             })
@@ -13011,7 +13003,7 @@ var SideNavbar = /*#__PURE__*/function (_React$Component) {
   return SideNavbar;
 }(react__WEBPACK_IMPORTED_MODULE_1__.Component);
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.withRouter)(SideNavbar));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.withRouter)(SideNavbar));
 
 /***/ }),
 
@@ -18854,7 +18846,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,500,600,700);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".inner-app {\n  width:40%;\n  margin :5% 0 0 30%;\n}\n\n.App {\n  display: flex;\n  width: 100%;\n  align-items: stretch;\n}\na,\na:hover,\na:focus {\n  color: inherit;\n  text-decoration: none;\n  transition: all 0.2s;\n}\n\n/* ---------------------------------------------------\n    SIDEBAR STYLE\n----------------------------------------------------- */\n.sidebar {\n  min-width: 250px;\n  max-width: 250px;\n  background: #354052;\n  color: #adb5bd;\n  /* margin-left: -250px; */\n  transition: all 0.5s;\n  float:left;\n}\n\n.sidebar.is-open {\n  margin-left: 0;\n  transition: .5s;\n}\n\n\n.sidebar-header {\n  background: #313b4c;\n  color: #adb5bd;\n}\n\n.sidebar-header h3{\n  color: #fff;\n  padding: 1em;\n}\n\n.sidebar ul p {\n  color: #fff;\n  padding: 10px;\n}\n\n.collapse.show, \n.collapsing {\n  background: #313b4c;\n}\n\n.nav-item {\n  /*color: #ced4da;*/\n  color: #adb5bd;\n  font-weight: 300;\n}\n\n.nav-item.open {\n  color: #e9ecef;\n  background: #313b4c;\n}\n\n.nav-item.active {\n  color: #e9ecef;\n  background: #2d3646 !important;\n}\n\n.nav-item:hover {\n  background: #313b4c;\n  color: #fff;\n  transition: .2s;\n}\n\n.nav-item .svg-inline--fa {\n  color: inherit;\n}\n\nli a.dropdown-toggle::after {\n  display: inline-flex;\n  position: relative;\n  left: 60%;\n  top: 10%\n}\n\n.sidebar-header > button {\n  position: relative;\n  float: right;\n  margin: .5em;\n  font-size: 2rem;\n  cursor: pointer;\n  display: none;\n}\n\n\n/* ---------------------------------------------------\n    CONTENT STYLE\n----------------------------------------------------- */\n.content {\n  padding: 20px;\n  margin-left: 0;\n  height: 100%;\n  float: left;\n}\n\n@media only screen and (max-width: 575.98px) {\n  body {\n    overflow:  hidden;\n  }\n  \n  .content.is-open {\n    /*margin-left: 100%;*/\n    display: none;\n    transition: all 0.5s;\n  }\n  \n  .sidebar.is-open {\n    min-width: 100%;\n    max-width: 100%;\n    margin-left: 0;\n    transition: all 0.5s, height 0s;\n    height: 100% !important;\n  }\n  \n  .sidebar.is-open > .sidebar-header button {\n    display: block;\n  }\n  \n  li a.dropdown-toggle::after {\n    display: inline-block;\n    position: relative;\n    left: 68%;\n  }\n  \n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".inner-app {\r\n  width:40%;\r\n  margin :5% 0 0 30%;\r\n}\r\n\r\n.App {\r\n  display: flex;\r\n  width: 100%;\r\n  align-items: stretch;\r\n}\r\na,\r\na:hover,\r\na:focus {\r\n  color: inherit;\r\n  text-decoration: none;\r\n  transition: all 0.2s;\r\n}\r\n\r\n/* ---------------------------------------------------\r\n    SIDEBAR STYLE\r\n----------------------------------------------------- */\r\n.sidebar {\r\n  min-width: 250px;\r\n  max-width: 250px;\r\n  background: #354052;\r\n  color: #adb5bd;\r\n  /* margin-left: -250px; */\r\n  transition: all 0.5s;\r\n  float:left;\r\n}\r\n\r\n.sidebar.is-open {\r\n  margin-left: 0;\r\n  transition: .5s;\r\n}\r\n\r\n\r\n.sidebar-header {\r\n  background: #313b4c;\r\n  color: #adb5bd;\r\n}\r\n\r\n.sidebar-header h3{\r\n  color: #fff;\r\n  padding: 1em;\r\n}\r\n\r\n.sidebar ul p {\r\n  color: #fff;\r\n  padding: 10px;\r\n}\r\n\r\n.collapse.show, \r\n.collapsing {\r\n  background: #313b4c;\r\n}\r\n\r\n.nav-item {\r\n  /*color: #ced4da;*/\r\n  color: #adb5bd;\r\n  font-weight: 300;\r\n}\r\n\r\n.nav-item.open {\r\n  color: #e9ecef;\r\n  background: #313b4c;\r\n}\r\n\r\n.nav-item.active {\r\n  color: #e9ecef;\r\n  background: #2d3646 !important;\r\n}\r\n\r\n.nav-item:hover {\r\n  background: #313b4c;\r\n  color: #fff;\r\n  transition: .2s;\r\n}\r\n\r\n.nav-item .svg-inline--fa {\r\n  color: inherit;\r\n}\r\n\r\nli a.dropdown-toggle::after {\r\n  display: inline-flex;\r\n  position: relative;\r\n  left: 60%;\r\n  top: 10%\r\n}\r\n\r\n.sidebar-header > button {\r\n  position: relative;\r\n  float: right;\r\n  margin: .5em;\r\n  font-size: 2rem;\r\n  cursor: pointer;\r\n  display: none;\r\n}\r\n\r\n\r\n/* ---------------------------------------------------\r\n    CONTENT STYLE\r\n----------------------------------------------------- */\r\n.content {\r\n  padding: 20px;\r\n  margin-left: 0;\r\n  height: 100%;\r\n  float: left;\r\n}\r\n\r\n@media only screen and (max-width: 575.98px) {\r\n  body {\r\n    overflow:  hidden;\r\n  }\r\n  \r\n  .content.is-open {\r\n    /*margin-left: 100%;*/\r\n    display: none;\r\n    transition: all 0.5s;\r\n  }\r\n  \r\n  .sidebar.is-open {\r\n    min-width: 100%;\r\n    max-width: 100%;\r\n    margin-left: 0;\r\n    transition: all 0.5s, height 0s;\r\n    height: 100% !important;\r\n  }\r\n  \r\n  .sidebar.is-open > .sidebar-header button {\r\n    display: block;\r\n  }\r\n  \r\n  li a.dropdown-toggle::after {\r\n    display: inline-block;\r\n    position: relative;\r\n    left: 68%;\r\n  }\r\n  \r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -18911,7 +18903,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_assets_cold_bg_jpg__WEBPACK_IMPORTED_MODULE_2__.default);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_assets_warm_bg_jpg__WEBPACK_IMPORTED_MODULE_3__.default);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',\n    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',\n    sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\ncode {\n  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',\n    monospace;\n}\n\n.app {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-size: cover;\n  background-position: bottom;\n  transition: 0.4 ease;\n}\n.app.warm {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n}\n\nmain {\n  min-height: 100vh;\n  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75));\n  padding: 25px;\n}\n\n.search-box {\n  width: 100%;\n  margin: 0 0 75px;\n}\n\n.search-box .search-bar {\n  display: block;\n  width: 100%;\n  padding: 15px;\n\n  -webkit-appearance: none;\n\n     -moz-appearance: none;\n\n          appearance: none;\n  background: none;\n  border: none;\n  outline: none;\n\n  background-color: rgba(255, 255, 255, 0.5);\n  border-radius: 0px 0px 16px 16px;\n  margin-top: -25px;\n\n  box-shadow: 0px 5px rgba(0, 0, 0, 0.2);\n  \n  color: #313131;\n  font-size: 20px;\n\n  transition: 0.4s ease;\n}\n\n.search-box .search-bar:focus {\n  background-color: rgba(255, 255, 255, 0.75);\n}\n\n.location-box .location {\n  color: #FFF;\n  font-size: 32px;\n  font-weight: 500;\n  text-align: center;\n  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);\n}\n\n.location-box .date {\n  color: #FFF;\n  font-size: 20px;\n  font-weight: 300;\n  font-style: italic;\n  text-align: center;\n  text-shadow: 2px 2px rgba(50, 50, 70, 0.5);\n}\n\n.weather-box {\n  text-align: center;\n}\n\n.weather-box .temp {\n  position: relative;\n  display: inline-block;\n  margin: 30px auto;\n  background-color: rgba(255, 255, 255, 0.2);\n  border-radius: 16px;\n\n  padding: 15px 25px;\n\n  color: #FFF;\n  font-size: 102px;\n  font-weight: 900;\n\n  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);\n  text-align: center;\n  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);\n}\n\n.weather-box .weather {\n  color: #FFF;\n  font-size: 48px;\n  font-weight: 700;\n  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  margin: 0;\r\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',\r\n    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',\r\n    sans-serif;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\r\n}\r\n\r\ncode {\r\n  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',\r\n    monospace;\r\n}\r\n\r\n.weather-app {\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n  background-size: cover;\r\n  background-position: bottom;\r\n  transition: 0.4 ease;\r\n}\r\n.weather-app.warm {\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\r\n}\r\n\r\nmain {\r\n  min-height: 100vh;\r\n  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75));\r\n  padding: 25px;\r\n}\r\n\r\n.search-box {\r\n  width: 100%;\r\n  margin: 0 0 75px;\r\n}\r\n\r\n.search-box .search-bar {\r\n  display: block;\r\n  width: 100%;\r\n  padding: 15px;\r\n\r\n  -webkit-appearance: none;\r\n\r\n     -moz-appearance: none;\r\n\r\n          appearance: none;\r\n  background: none;\r\n  border: none;\r\n  outline: none;\r\n\r\n  background-color: rgba(255, 255, 255, 0.5);\r\n  border-radius: 0px 0px 16px 16px;\r\n  margin-top: -25px;\r\n\r\n  box-shadow: 0px 5px rgba(0, 0, 0, 0.2);\r\n  \r\n  color: #313131;\r\n  font-size: 20px;\r\n\r\n  transition: 0.4s ease;\r\n}\r\n\r\n.search-box .search-bar:focus {\r\n  background-color: rgba(255, 255, 255, 0.75);\r\n}\r\n\r\n.location-box .location {\r\n  color: #FFF;\r\n  font-size: 32px;\r\n  font-weight: 500;\r\n  text-align: center;\r\n  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);\r\n}\r\n\r\n.location-box .date {\r\n  color: #FFF;\r\n  font-size: 20px;\r\n  font-weight: 300;\r\n  font-style: italic;\r\n  text-align: center;\r\n  text-shadow: 2px 2px rgba(50, 50, 70, 0.5);\r\n}\r\n\r\n.weather-box {\r\n  text-align: center;\r\n}\r\n\r\n.weather-box .temp {\r\n  position: relative;\r\n  display: inline-block;\r\n  margin: 30px auto;\r\n  background-color: rgba(255, 255, 255, 0.2);\r\n  border-radius: 16px;\r\n\r\n  padding: 15px 25px;\r\n\r\n  color: #FFF;\r\n  font-size: 102px;\r\n  font-weight: 900;\r\n\r\n  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);\r\n  text-align: center;\r\n  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);\r\n}\r\n\r\n.weather-box .weather {\r\n  color: #FFF;\r\n  font-size: 48px;\r\n  font-weight: 700;\r\n  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);\r\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -52515,78 +52507,6 @@ var AbstractNavItem = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.forwardRef
 });
 AbstractNavItem.defaultProps = defaultProps;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AbstractNavItem);
-
-/***/ }),
-
-/***/ "./node_modules/react-bootstrap/esm/Button.js":
-/*!****************************************************!*\
-  !*** ./node_modules/react-bootstrap/esm/Button.js ***!
-  \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _ThemeProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ThemeProvider */ "./node_modules/react-bootstrap/esm/ThemeProvider.js");
-/* harmony import */ var _SafeAnchor__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./SafeAnchor */ "./node_modules/react-bootstrap/esm/SafeAnchor.js");
-
-
-
-
-
-
-var defaultProps = {
-  variant: 'primary',
-  active: false,
-  disabled: false
-};
-var Button = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.forwardRef(function (_ref, ref) {
-  var bsPrefix = _ref.bsPrefix,
-      variant = _ref.variant,
-      size = _ref.size,
-      active = _ref.active,
-      className = _ref.className,
-      block = _ref.block,
-      type = _ref.type,
-      as = _ref.as,
-      props = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__.default)(_ref, ["bsPrefix", "variant", "size", "active", "className", "block", "type", "as"]);
-
-  var prefix = (0,_ThemeProvider__WEBPACK_IMPORTED_MODULE_4__.useBootstrapPrefix)(bsPrefix, 'btn');
-  var classes = classnames__WEBPACK_IMPORTED_MODULE_2___default()(className, prefix, active && 'active', variant && prefix + "-" + variant, block && prefix + "-block", size && prefix + "-" + size);
-
-  if (props.href) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(_SafeAnchor__WEBPACK_IMPORTED_MODULE_5__.default, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, props, {
-      as: as,
-      ref: ref,
-      className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(classes, props.disabled && 'disabled')
-    }));
-  }
-
-  if (ref) {
-    props.ref = ref;
-  }
-
-  if (type) {
-    props.type = type;
-  } else if (!as) {
-    props.type = 'button';
-  }
-
-  var Component = as || 'button';
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(Component, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, props, {
-    className: classes
-  }));
-});
-Button.displayName = 'Button';
-Button.defaultProps = defaultProps;
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Button);
 
 /***/ }),
 
