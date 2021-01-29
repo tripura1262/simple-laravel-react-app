@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\WeatherController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,15 +17,9 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::post("register", [AuthController::class, 'userSignUp']);
 
 Route::post("login", [AuthController::class, 'userLogin']);
-
-Route::get("userDetail/{email}", [AuthController::class, 'userDetail']);
 
 Route::get('/items', [ItemsController::class, 'index']);
 Route::post('/item', [ItemsController::class, 'store']);
@@ -36,3 +30,5 @@ Route::get('/user', [UserController::class, 'index']);
 Route::post('/user', [UserController::class, 'store']);
 Route::put('/user/{id}', [UserController::class, 'update']);
 Route::delete('/user/{id}', [UserController::class, 'destroy']);
+
+Route::get('weather', [WeatherController::class, 'index']);

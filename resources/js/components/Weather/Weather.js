@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-const api = {
-    key: "98febde65c90dbb045580854334817bc",
-    base: "https://api.openweathermap.org/data/2.5/",
-};
+import { BASE_URL } from "../../services";
 
 function Weather() {
     const [query, setQuery] = useState("");
     const [weather, setWeather] = useState({});
     const search = (evt) => {
         if (evt.key === "Enter") {
-            fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
-                .then((res) => res.json())
-                .then((result) => {
-                    setWeather(result);
-                    setQuery("");
-                    console.log(result);
-                });
+            axios
+            .get(`${BASE_URL}/api/weather?q=${query}&units=metric`)
+            .then((response) => {
+                setWeather(response.data);
+                setQuery("");
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
         }
     };
 

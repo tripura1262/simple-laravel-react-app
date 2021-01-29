@@ -2,22 +2,16 @@ import React, { Component } from "react";
 import ReactDOM from 'react-dom';
 import './index.css';
 import {
-  BrowserRouter,
   Route,
   HashRouter,
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Main from './Main';
-import Signin from "./components/SignIn/Signin";
 
 class Index extends Component {
   render() {
       return (
-          // <BrowserRouter>
-          //     <Route component={Main} />
-          // </BrowserRouter>
           <HashRouter>
               <Route component={Main} />
           </HashRouter>

@@ -6,47 +6,35 @@ import Home from "./components/Home/Home";
 import {
     BrowserRouter as Router,
     Route,
-    NavLink,
     Switch,
 } from "react-router-dom";
 import DisplayItems from "./components/Items/DisplayItems";
 import DisplayUsers from "./components/Users/DisplayUsers";
 import DisplayWeather from "./components/Weather/DisplayWeather";
-import SideNavbar from "./components/Navigation/SideNavbar";
+import PrivateRouter from "./PrivateRouter";
 
 export default class App extends Component {
     render() {
         const login = localStorage.getItem("isLoggedIn");
         return (
             <div className="App">
-                {login ? (
+                {/* {login ? (
                     <Switch>
-                        <Route path="/home" component={Home} />
-                        <Route path="/items" component={DisplayItems} />
-                        <Route path="/users" component={DisplayUsers} />
-                        <Route path="/weather" component={DisplayWeather} />
+                       <PrivateRouter path="/home" component={Home} />
+                        <PrivateRouter path="/items" component={DisplayItems} />
+                        <PrivateRouter path="/users" component={DisplayUsers} />
+                        <PrivateRouter path="/weather" component={DisplayWeather} /> 
                     </Switch>
-                ) : (
+                ) : ( */}
                     <Switch>
                         <Route exact path="/" component={Signup} />
                         <Route path="/sign-in" component={Signin} />
+                        <PrivateRouter path="/home" component={Home} />
+                        <PrivateRouter path="/items" component={DisplayItems} />
+                        <PrivateRouter path="/users" component={DisplayUsers} />
+                        <PrivateRouter path="/weather" component={DisplayWeather} />
                     </Switch>
-                )}
-
-                {/* {login ? (
-                    <Router>
-                        <Route exact path="/" component={Signup}></Route>
-                        <Route path="/sign-in" component={Signin}></Route>
-                        <Route path="/home" component={Home}></Route>
-                    </Router>
-                ) : (
-                    <Router>
-                        {navLink}
-                        <Route exact path="/" component={Signup}></Route>
-                        <Route path="/sign-in" component={Signin}></Route>
-                        <Route path="/home" component={Home}></Route>
-                    </Router>
-                )} */}
+                {/* )} */}
             </div>
         );
     }

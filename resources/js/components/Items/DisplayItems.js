@@ -198,6 +198,7 @@ export default class DisplayItems extends Component {
                                 <Label for="name"> Name </Label>
                                 <Input
                                     type="text"
+                                    required 
                                     id="name"
                                     value={this.state.newItemData.name}
                                     onChange={(e) => {
@@ -211,6 +212,7 @@ export default class DisplayItems extends Component {
                                 <Label for="price"> Price </Label>
                                 <Input
                                     type="number"
+                                    required 
                                     id="price"
                                     value={this.state.newItemData.price}
                                     onChange={(e) => {
@@ -251,6 +253,7 @@ export default class DisplayItems extends Component {
                                 <Label for="name"> Name </Label>
                                 <Input
                                     id="name"
+                                    required 
                                     value={this.state.editItemData.name}
                                     onChange={(e) => {
                                         let { editItemData } = this.state;
@@ -263,6 +266,8 @@ export default class DisplayItems extends Component {
                                 <Label for="price"> Price </Label>
                                 <Input
                                     id="price"
+                                    type="number"
+                                    required 
                                     value={this.state.editItemData.price}
                                     onChange={(e) => {
                                         let { editItemData } = this.state;

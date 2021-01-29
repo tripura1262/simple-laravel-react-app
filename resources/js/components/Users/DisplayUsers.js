@@ -13,15 +13,6 @@ import {
 } from "reactstrap";
 import axios from "axios";
 import { BASE_URL } from "../../services";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    HashRouter,
-} from "react-router-dom";
-
-import Header from "../../components/Header/Header";
 import SideNavbar from "../Navigation/SideNavbar";
 
 export default class DisplayUsers extends Component {
@@ -194,7 +185,6 @@ export default class DisplayUsers extends Component {
         });
 
         return (
-            
             <div>
                 <SideNavbar />
                 <div className="content">

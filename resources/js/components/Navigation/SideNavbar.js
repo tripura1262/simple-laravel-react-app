@@ -11,22 +11,32 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Nav, Button } from "react-bootstrap";
 import classNames from "classnames";
-import { Redirect, withRouter } from "react-router-dom";
+import { Redirect, withRouter,useHistory } from "react-router-dom";
 
 class SideNavbar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            navigate: false,
-        };
+            navigate : false
+        }
     }
 
     onLogoutHandler = () => {
+        // console.log('The link was clicked.');
         localStorage.clear();
-        this.props.history.push("#/sign-in");
+        this.setState({
+            navigate: true,
+        });
+        if (this.state.navigate) {
+            window.location.href="#/sign-in"
+        }
     };
 
     render() {
+        // const { navigate } = this.state;
+        // if (navigate) {
+        //     return <Redirect to="/" push={true} />;
+        // }
         return (
             <div
                 className={classNames("sidebar", {
