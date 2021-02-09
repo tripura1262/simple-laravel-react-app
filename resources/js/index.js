@@ -5,17 +5,17 @@ import {
   Route,
   HashRouter,
 } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import * as serviceWorker from './serviceWorker';
 import Main from './Main';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class Index extends Component {
   render() {
-      return (
-          <HashRouter>
-              <Route component={Main} />
-          </HashRouter>
-      );
+    return (
+      <HashRouter>
+        <Route component={Main} />
+      </HashRouter>
+    );
   }
 }
 

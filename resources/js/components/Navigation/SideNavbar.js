@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faHome,
@@ -7,83 +7,67 @@ import {
     faWind,
     faSignOutAlt
 } from "@fortawesome/free-solid-svg-icons";
-import { Nav, Button } from "react-bootstrap";
-import classNames from "classnames";
-import { Redirect, withRouter,useHistory } from "react-router-dom";
+import { Nav } from "react-bootstrap";
+import { useHistory, NavLink, Redirect } from "react-router-dom";
+import { NavItem } from "reactstrap";
 
-class SideNavbar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            navigate : false
-        }
-    }
-
-    onLogoutHandler = () => {
-        // console.log('The link was clicked.');
+export default function SideNavbar() {
+    const [navigate, setNavigate] = useState(false)
+    const history = useHistory();
+    const onLogoutHandler = () => {
         localStorage.clear();
-        this.setState({
-            navigate: true,
-        });
-        if (this.state.navigate) {
-            window.location.href="#/sign-in"
+        setNavigate(true)
+        if (navigate) {
+            history.push("/sign-in");
         }
     };
-
-    render() {
-        // const { navigate } = this.state;
-        // if (navigate) {
-        //     return <Redirect to="/" push={true} />;
-        // }
-        return (
-            <div
-                className={classNames("sidebar", {
-                    "is-open": this.props.isOpen,
-                })}
-            >
+    const login = localStorage.getItem("isLoggedIn");
+    if (!login) {
+        return <Redirect to="/sign-in" />;
+    }   
+    return (
+        <div className="col-md-3 col-md-offset-0">
+            <div className="sidebar">
                 <div className="sidebar-header">
                     <h3>Sample Project</h3>
                 </div>
-
                 <Nav className="flex-column pt-2">
-                    <Nav.Item className="active">
-                        <Nav.Link href="#/home">
+                    <NavItem>
+                        <NavLink exact to="/home" activeClassName="active" className="nav-link" >
                             <FontAwesomeIcon icon={faHome} className="mr-2" />
-                            Home
-                        </Nav.Link>
-                    </Nav.Item>
+                        Home
+                    </NavLink>
+                    </NavItem>
 
-                    <Nav.Item>
-                        <Nav.Link href="#/users">
+                    <NavItem>
+                        <NavLink exact to="/users" activeClassName="active" className="nav-link">
                             <FontAwesomeIcon icon={faUsers} className="mr-2" />
-                            Users
-                        </Nav.Link>
-                    </Nav.Item>
+                        Users
+                        </NavLink>
+                    </NavItem>
 
-                    <Nav.Item>
-                        <Nav.Link href="#/items">
+                    <NavItem>
+                        <NavLink exact to="/items" activeClassName="active" className="nav-link">
                             <FontAwesomeIcon icon={faThList} className="mr-2" />
-                            Items
-                        </Nav.Link>
-                    </Nav.Item>
+                        Items
+                        </NavLink>
+                    </NavItem>
 
-                    <Nav.Item>
-                        <Nav.Link href="#/weather">
+                    <NavItem>
+                        <NavLink exact to="/weather" activeClassName="active" className="nav-link">
                             <FontAwesomeIcon icon={faWind} className="mr-2" />
-                            Weather
-                        </Nav.Link>
-                    </Nav.Item>
+                        Weather
+                        </NavLink>
+                    </NavItem>
 
-                    <Nav.Item>
-                        <Nav.Link onClick={this.onLogoutHandler}>
+                    <NavItem>
+                        <NavLink exact to="#" activeClassName="" onClick={onLogoutHandler} className="nav-link">
                             <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
                             Logout
-                        </Nav.Link>
-                    </Nav.Item>
+                        </NavLink>
+                    </NavItem>
                 </Nav>
             </div>
-        );
-    }
+        </div>
+    )
 }
-
-export default withRouter(SideNavbar);

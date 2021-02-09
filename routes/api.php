@@ -17,18 +17,27 @@ use App\Http\Controllers\WeatherController;
 |
 */
 
-Route::post("register", [AuthController::class, 'userSignUp']);
+Route::post("register", [AuthController::class, "userSignUp"]);
 
-Route::post("login", [AuthController::class, 'userLogin']);
+Route::post("login", [AuthController::class, "userLogin"]);
 
-Route::get('/items', [ItemsController::class, 'index']);
-Route::post('/item', [ItemsController::class, 'store']);
-Route::put('/item/{id}', [ItemsController::class, 'update']);
-Route::delete('/item/{id}', [ItemsController::class, 'destroy']);
+Route::group(["middleware" => "auth:api"], function () {
+    Route::get("/items", [ItemsController::class, "index"]);
+    Route::get("/item/{id}", [ItemsController::class, "edit"]);
+    Route::post("/item", [ItemsController::class, "store"]);
+    Route::put("/item/{id}", [ItemsController::class, "update"]);
+    Route::delete("/item/{id}", [ItemsController::class, "destroy"]);
 
-Route::get('/user', [UserController::class, 'index']);
-Route::post('/user', [UserController::class, 'store']);
-Route::put('/user/{id}', [UserController::class, 'update']);
-Route::delete('/user/{id}', [UserController::class, 'destroy']);
+    Route::get("/users", [UserController::class, "index"]);
+    Route::get("/user/{id}", [UserController::class, "edit"]);
+    Route::post("/user", [UserController::class, "store"]);
+    Route::put("/user/{id}", [UserController::class, "update"]);
+    Route::delete("/user/{id}", [UserController::class, "destroy"]);
 
-Route::get('weather', [WeatherController::class, 'index']);
+    Route::get("weather", [WeatherController::class, "index"]);
+});
+
+Route::get("/login/{social}/callback", [
+    AuthController::class,
+    "handleProviderCallback",
+])->where("social", "twitter|facebook|linkedin|google|");

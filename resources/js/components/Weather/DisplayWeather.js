@@ -1,22 +1,16 @@
 import React, { Component } from "react";
-import Header from "../Header/Header";
 import Weather from "./Weather";
 import SideNavbar from './../Navigation/SideNavbar'
-export default class DisplayWeather extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
 
-        };
-    }
-    render() {
-        return (
-            <div>
+export default function DisplayWeather() {
+    return (
+        <div className="container-fluid p-0">
+            <div className="row">
                 <SideNavbar />
-                <div className="content">
-                <Weather />
+                <div className="col-md-8 col-md-offset-0">
+                    <Weather />
                 </div>
             </div>
-        );
-    }
+        </div>
+    )
 }

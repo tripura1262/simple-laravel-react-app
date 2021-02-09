@@ -1,134 +1,132 @@
-import React, { Component } from "react";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-import axios from "axios";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { Redirect } from "react-router-dom";
 import Header from "../Header/Header";
+import { ErrorMessage } from '@hookform/error-message';
+import AuthService from "../../services/auth.service";
+import { Button } from "reactstrap"
 
-export default class Signin extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: "",
-      password: "",
-      msg: "",
-      isLoading: false,
-      redirect: false,
-      errMsgEmail: "",
-      errMsgPwd: "",
-      errMsg: "",
-    };
-  }
-  onChangehandler = (e) => {
-    let name = e.target.name;
-    let value = e.target.value;
-    let data = {};
-    data[name] = value;
-    this.setState(data);
-  };
+export default function Signin() {
+    const { register, handleSubmit, errors } = useForm(); // initialize the hook
+    const [loading, setLoading] = useState(false);
+    const [isLoggedIn, setisLoggedIn] = useState(false);
+    const [loginmessage, setLoginMessage] = useState("");
+    const [redirect, setRedirect] = useState(false);
 
-  onSignInHandler = () => {
-    this.setState({ isLoading: true });
-    axios
-      .post("http://localhost:8000/api/login", {
-        email: this.state.email,
-        password: this.state.password,
-      })
-      .then((response) => {
-        this.setState({ isLoading: false });
-        if (response.data.status === 200) {
-            localStorage.setItem("isLoggedIn", true);
-            localStorage.setItem("userData", JSON.stringify(response.data.data));
-          this.setState({
-            msg: response.data.message,
-            redirect: true,
-          });
-         
-        }
-        if (
-          response.data.status === "failed" &&
-          response.data.success === undefined
-        ) {
-          this.setState({
-            errMsgEmail: response.data.validation_error.email,
-            errMsgPwd: response.data.validation_error.password,
-          });
-          setTimeout(() => {
-            this.setState({ errMsgEmail: "", errMsgPwd: "" });
-          }, 2000);
-        } else if (
-          response.data.status === "failed" &&
-          response.data.success === false
-        ) {
-          this.setState({
-            errMsg: response.data.message,
-          });
-          setTimeout(() => {
-            this.setState({ errMsg: "" });
-          }, 2000);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+    const handleLoginSubmit = (data) => {
+        setLoginMessage("")
+        setLoading(true)
+        AuthService.login(data).then(
+            (response) => {
+                if (response.data.status === 200) {
+                    // console.log(response.data)
+                    localStorage.setItem("isLoggedIn", true);
+                    localStorage.setItem(
+                        "userData", JSON.stringify(response.data)
+                    );
+                    localStorage.setItem(
+                        "accessToken", (response.data.token_type + ' ' + response.data.access_token)
+                    );
+                    setLoginMessage(response.data.message);
+                    setLoading(false);
+                    setRedirect(true)
+                    setisLoggedIn(true)
+                    if (isLoggedIn) {
+                        props.history.push("/home");
+                        window.location.reload();
+                    }
+                } else {
+                    setLoginMessage(response.data.message);
+                    setLoading(false);
+                }
+                console.log(loginmessage)
+            },
+            (error) => {
+                const resMessage =
+                    (error.response &&
+                        error.response.data &&
+                        error.response.data.message) ||
+                    error.message ||
+                    error.toString();
 
-  render() {
-    if (this.state.redirect) {
-      return <Redirect to="/home" />;
+                setLoading(false);
+                setLoginMessage(resMessage);
+            }
+        );
     }
+    console.log(localStorage)
     const login = localStorage.getItem("isLoggedIn");
+    console.log(login)
     if (login) {
-      return <Redirect to="/home" />;
+        return <Redirect to="/home" />;
     }
-    const isLoading = this.state.isLoading;
-
-    
     return (
-      <div className="inner-app">
-        <Header />
-        <Form className="containers">
-          <FormGroup>
-            <Label for="email">Email id</Label>
-            <Input
-              type="email"
-              name="email"
-              placeholder="Enter email"
-              value={this.state.email}
-              onChange={this.onChangehandler}
-            />
-            <span className="text-danger">{this.state.msg}</span>
-            <span className="text-danger">{this.state.errMsgEmail}</span>
-          </FormGroup>
-          <FormGroup>
-            <Label for="password">Password</Label>
-            <Input
-              type="password"
-              name="password"
-              placeholder="Enter password"
-              value={this.state.password}
-              onChange={this.onChangehandler}
-            />
-            <span className="text-danger">{this.state.errMsgPwd}</span>
-          </FormGroup>
-          <p className="text-danger">{this.state.errMsg}</p>
-          <Button
-            className="text-center mb-4"
-            color="success"
-            onClick={this.onSignInHandler}
-          >
-            Sign In
-            {isLoading ? (
-              <span
-                className="spinner-border spinner-border-sm ml-5"
-                role="status"
-                aria-hidden="true"
-              ></span>
-            ) : (
-              <span></span>
-            )}
-          </Button>
-        </Form>
-      </div>
+        <div className="container-fluid signin-layout">
+            <div className="row justify-content-center align-items-center">
+                <div className="col-md-6 col-md-offset-3">
+                    <div className="panel panel-login">
+                        <Header />
+                        <div className="panel-body">
+                            <div className="row">
+                                <div className="col-lg-12">
+                                    {loginmessage && (
+                                        <div className="form-group">
+                                            <div className="error-message">
+                                                {loginmessage}
+                                            </div>
+                                        </div>
+                                    )}
+                                    <form onSubmit={handleSubmit(handleLoginSubmit)}>
+                                        <div className="form-group">
+                                            <label className="lable" htmlFor="email">Email</label>
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                placeholder="Enter email"
+                                                className={`form-control ${errors.email ? "is-invalid" : ""
+                                                    }`}
+                                                ref={register({
+                                                    required: "Email is required",
+                                                    pattern: {
+                                                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                                                        message: "Invalid email address format"
+                                                    }
+                                                })}
+                                            />
+                                            <ErrorMessage className="invalid-feedback" name="email" as="div" errors={errors} />
+                                        </div>
+
+                                        <div className="form-group">
+                                            <label className="lable" htmlFor="password">Password</label>
+                                            <input
+                                                type="password"
+                                                name="password"
+                                                placeholder="Enter password"
+                                                className={`form-control ${errors.password ? "is-invalid" : ""
+                                                    }`}
+                                                ref={register({
+                                                    required: "Password is required",
+                                                })}
+                                            />
+                                            <ErrorMessage className="invalid-feedback" name="password" as="div" errors={errors} />
+                                        </div>
+                                        <div className="form-group">
+                                            <div className="row">
+                                                <div className="col-sm-6 col-sm-offset-3" style={{ marginLeft: '40%' }}>
+                                                    <Button color="primary" size="lg"> Log In </Button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    {/* <hr />
+                                    <center><h4>OR</h4></center>
+                                    <Button color="primary" size="lg" onClick={() => window.location.assign(`redirect/facebook`)} style={{ marginLeft: '33%' }}> Login via facebook </Button> */}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
-  }
 }

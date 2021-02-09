@@ -1,22 +1,25 @@
 import React, { useState } from "react";
-import { BASE_URL } from "../../services";
+import HTTP from './../../Http'
 
-function Weather() {
+export default function Weather() {
     const [query, setQuery] = useState("");
     const [weather, setWeather] = useState({});
     const search = (evt) => {
+        let isMounted = true;
         if (evt.key === "Enter") {
-            axios
-            .get(`${BASE_URL}/api/weather?q=${query}&units=metric`)
-            .then((response) => {
-                setWeather(response.data);
-                setQuery("");
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+            HTTP
+                .get(`api/weather?q=${query}&units=metric`)
+                .then((response) => {
+                    if (isMounted) {
+                        setWeather(response.data);
+                        setQuery("");
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
         }
+        return () => { isMounted = false };
     };
 
     const dateBuilder = (d) => {
@@ -48,12 +51,11 @@ function Weather() {
         let date = d.getDate();
         let month = months[d.getMonth()];
         let year = d.getFullYear();
-
         return `${day} ${date} ${month} ${year}`;
     };
 
     return (
-        <div>
+        <>
             <h1> Weather </h1>
             <div
                 className={
@@ -95,12 +97,11 @@ function Weather() {
                             </div>
                         </div>
                     ) : (
-                        ""
-                    )}
+                            ""
+                        )}
                 </main>
             </div>
-        </div>
+
+        </>
     );
 }
-
-export default Weather;
